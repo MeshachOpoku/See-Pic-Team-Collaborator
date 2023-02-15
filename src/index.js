@@ -1,17 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {createRoot} from 'react-dom/client';
+import SearchBar from './SearchBar';
+import Clock from './Clock';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App=()=>
+{// maim platform for dispaying components created
+    return<div>
+       
+           <div className="ui primary label">
+           <div className="ui massive blue label">See-Pic</div>
+             <div style={{fontSize:'26px'}} className='ui   label'><i className="icon medium picture "></i></div>
+            <div className="ui large basic blue label">Nice pics......</div>   <br/> <br/> <br/>
+         </div><br/>
+         <Clock/>
+<SearchBar/>
+    </div>
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const rootConnection=createRoot(document.getElementById('root')).render(<App/>);
